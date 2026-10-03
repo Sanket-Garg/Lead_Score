@@ -1,7 +1,24 @@
-# Lead_Score
-Building a Machine learning code for checking the probability if the lead will convert or not
-# Problem Statement
-An education company named X Education sells online courses to industry professionals. On any given day, many professionals who are interested in the courses land on their website and browse for courses. 
-The company markets its courses on several websites and search engines like Google. Once these people land on the website, they might browse the courses or fill up a form for the course or watch some videos. When these people fill up a form providing their email address or phone number, they are classified to be a lead. Moreover, the company also gets leads through past referrals. Once these leads are acquired, employees from the sales team start making calls, writing emails, etc. Through this process, some of the leads get converted while most do not. The typical lead conversion rate at X education is around 30%. 
-Now, although X Education gets a lot of leads, its lead conversion rate is very poor. For example, if, say, they acquire 100 leads in a day, only about 30 of them are converted. To make this process more efficient, the company wishes to identify the most potential leads, also known as ‘Hot Leads’. If they successfully identify this set of leads, the lead conversion rate should go up as the sales team will now be focusing more on communicating with the potential leads rather than making calls to everyone.
-X Education has appointed you to help them select the most promising leads, i.e. the leads that are most likely to convert into paying customers. The company requires you to build a model wherein you need to assign a lead score to each of the leads such that the customers with a higher lead score have a higher conversion chance and the customers with a lower lead score have a lower conversion chance. The CEO, in particular, has given a ballpark of the target lead conversion rate to be around 80%.
+# Lead Scoring
+
+## Business Problem
+
+The main objective of this project is to identify leads that are more likely to convert. This can help the business prioritize leads and focus sales efforts on leads with a higher chance of conversion.
+
+## Approach
+
+The data was cleaned and prepared, followed by exploratory analysis and feature selection. A Logistic Regression model was built to predict the probability of lead conversion. Different probability cutoffs were evaluated, and a final cutoff of **0.4** was selected where precision and recall were closest.
+
+A Lead Score was then created from the model's estimated probability of conversion on a 0–100 scale.
+
+## Model Performance
+
+On the test set, the final model achieved:
+
+* Accuracy: **81.96%**
+* Sensitivity (Recall): **75.8%**
+* Specificity: **85.99%**
+* AUC: **0.879**
+
+The overall conversion rate in the test set was **39.5%**, while the leads flagged by the model had a conversion rate of **77.9%**. This resulted in a **1.97x lift** compared with the overall conversion rate.
+
+Overall, the model provides a useful way of ranking leads based on their estimated likelihood of conversion.
